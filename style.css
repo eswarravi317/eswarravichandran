@@ -528,7 +528,7 @@ section {
 @media screen and (max-width: 660px) {
     .experience {
         width: 90%;
-        padding: 2% 1%;
+        padding: 2% 0%;
         display: block;
         align-items: center;
         margin: 1% auto;
