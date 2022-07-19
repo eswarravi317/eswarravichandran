@@ -20,6 +20,9 @@
     padding: 0%;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Poppins', sans-serif;
     background-color: rgb(36, 36, 36);
@@ -302,6 +305,65 @@ section {
     display: none;
 }
 
+/* Experience */
+.experience {
+    width: 100%;
+    padding: 2% 13%;
+    display: flex;
+    align-items: center;
+}
+.experience img {
+    width: 100px;
+    margin: 0px 50px 0px 0px;
+    transition: .5s;
+    padding: 1%;
+    border: 5px solid rgb(63, 63, 63);
+    border-radius: 50%;
+}
+.experience_content h2 {
+    color: rgb(235, 69, 8);
+}
+.experience p {
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 28px;
+    margin: 30px 0 35px 0;
+    min-width: 800px;
+    padding: 5%;
+    border-radius: 10px;
+    border: 2px solid rgb(63, 63, 63);
+    position: relative;
+}
+.experience p::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(36, 36, 36);
+    border: 2px solid rgb(63, 63, 63);
+    border-left-color: transparent;
+    border-top-color: transparent;
+    transition: .5s;
+    left: -27px;
+    transform: rotate(135deg);
+}
+.experience_topic {
+    width: 90%;
+    margin: 1% auto;
+    font-size: 58px;
+    color: #ffffff;
+    position: relative;
+}
+.experience_topic::after {
+    position: absolute;
+    content: '';
+    width: 20%;
+    height: 4px;
+    background-color: rgb(235, 69, 8);
+    left: 0%;
+    bottom: 2px;
+}
+
 @media screen and (max-width: 1100px) {
     .main {
         width: 100%;
@@ -319,6 +381,9 @@ section {
         line-height: 28px;
         margin: 25px 0 30px 0;
         max-width: 600px;
+    }
+    .experience p {
+        min-width: 600px;
     }
 }
 
@@ -345,6 +410,12 @@ section {
     .text p {
         margin: 15px 0 20px 0;
         max-width: 500px;
+    }
+    .experience p {
+        line-height: 24px;
+        margin: 30px 0 35px 0;
+        min-width: 450px;
+        padding: 5% 10%;
     }
 }
 
@@ -433,10 +504,10 @@ section {
     .img {
         width: 90%;
         margin: 10% auto;
-        margin-top: -5%;
         align-items: center;
         justify-content: center;
         text-align: center;
+        margin-bottom: 50px;
     }
     #img-outer {
         display: none;
@@ -446,5 +517,56 @@ section {
     }
     .btn {
         text-align: center;
+        margin: 10% 0%;
+    }
+    .experience p {
+        min-width: 350px;
+        line-height: 20px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .experience {
+        width: 90%;
+        padding: 2% 5%;
+        display: block;
+        align-items: center;
+        margin: 2% auto;
+        justify-content: center;
+        text-align: center;
+    }
+    .experience img {
+        width: 100px;
+        margin: 30px 0 10px 0px;
+        transition: .5s;
+        padding: 2%;
+        border: 5px solid rgb(63, 63, 63);
+        border-radius: 50%;
+    }
+    .experience_content h2 {
+        color: rgb(235, 69, 8);
+        text-align: left;
+        font-size: 17px;
+    }
+    .experience p {
+        text-align: left;
+        font-size: 15px;
+        color: #ffffff;
+        line-height: 28px;
+        width: 100%;
+        padding: 5%;
+        margin: 30px auto;
+        border-radius: 10px;
+        border: 2px solid rgb(63, 63, 63);
+        position: relative;
+    }
+    .experience p::before {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: -22px;
+        left: 45%;
+        transform: rotate(225deg);
     }
 }
