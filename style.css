@@ -358,7 +358,7 @@ section {
 .experience_topic {
     width: 90%;
     margin: 1% auto;
-    font-size: 58px;
+    font-size: 50px;
     color: #ffffff;
     position: relative;
 }
@@ -382,7 +382,7 @@ section {
 #skills h1 {
     width: 90%;
     margin: 5% auto;
-    font-size: 58px;
+    font-size: 50px;
     color: #ffffff;
     position: relative;
 }
@@ -406,6 +406,9 @@ section {
 }
 .skills ul li {
     margin: 10px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
 }
 .skills ul li ion-icon {
     color: #ffffff;
@@ -415,6 +418,33 @@ section {
 .skills ul li p {
     font-size: 30px;
     color: #ffffff;
+}
+.tooltip {
+    background-color: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    font-size: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.skills ul li:hover .tooltip {
+    opacity: 1;
+    bottom: -23px;
+    pointer-events: auto;
+}
+.tooltip::before {
+    position: absolute;
+    content: '';
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
 }
 
 /* projects */
@@ -426,7 +456,7 @@ section {
 #projects h1 {
     width: 90%;
     margin: 5% auto;
-    font-size: 58px;
+    font-size: 50px;
     color: #ffffff;
     position: relative;
 }
@@ -487,13 +517,101 @@ section {
 }
 .blog-post__cta {
     display: inline-block;
-    padding: 1rem 0rem;
+    margin-top: 20px;
+    padding: 3px 7px;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 13px;
     color: rgb(235, 69, 8);
     text-decoration: none;
-    border-radius: 0.8rem;
+    border-radius: 5px;
+    border: 2px solid rgb(235, 69, 8);
+    transition: 0.5s;
+}
+.blog-post__cta:hover {
+    background-color: rgb(235, 69, 8);
+    color: #eeeeee;
+}
+.blog-post__cnt button {
+    outline: none;
+    border: 1px solid transparent;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 10px;
+    color: white;
+}
+.blog-post__cnt .html {
+    background-color: rgb(255, 102, 0);
+}
+.blog-post__cnt .css {
+    background-color: rgb(0, 149, 207);
+}
+.blog-post__cnt .js {
+    background-color: rgb(221, 221, 0);
+}
+.blog-post__cnt .bootstrap {
+    background-color: blueviolet;
+}
+.blog-post__cnt .react {
+    background-color: blue;
+}
+.blog-post__cnt .express {
+    background-color: gray;
+}
+.blog-post__cnt .nodejs {
+    background-color: rgb(42, 189, 42);
+}
+.blog-post__cnt .mongodb {
+    background-color: darkgreen;
+}
+.blog-post__cnt .pwa {
+    background-color: rgb(148, 148, 148);
+}
+
+/* contact */
+.contact {
+    width: 90%;
+    margin: 20px auto;
+}
+.contact h1 {
+    font-size: 20px;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+}
+.contact ul  {
+    list-style: none;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact ul li {
+    margin: 5px;
+    cursor: pointer;
+}
+.contact ul li a {
+    color: #eeeeee;
+    text-decoration: none;
+    transition: 0.5s;
+    padding: 5px;
+    border: 0.5px solid #eeeeee;
+    border-radius: 50%;
+}
+.contact ul li a:hover {
+    color: rgb(235, 69, 8);
+    border: 0.5px solid rgb(235, 69, 8);
+}
+h4, h5 {
+    text-align: center;
+}
+h5 {
+    color: #eeeeee;
+}
+h4 {
+    color: rgb(255, 102, 0);
 }
 
 @media screen and (max-width: 1068px) {
@@ -740,6 +858,12 @@ section {
     }
     #skills {
         border-radius: 30px 30px 0px 0px;
+    }
+    #projects h1 {
+        font-size: 40px;
+    }
+    #projects h1::after {
+        width: 20%;
     }
 }
 
